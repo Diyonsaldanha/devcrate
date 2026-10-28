@@ -24,7 +24,10 @@ export default function Header() {
             Shop
           </Link>
           <Link href="/wishlist" className={`nav-link cart-link ${isWishlist ? "nav-link-active" : ""}`} aria-current={isWishlist ? "page" : undefined}>
-            <span>Wishlist</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.9 3.6 5 6.7 5c1.9 0 3.3 1 5.3 3 2-2 3.4-3 5.3-3 3.1 0 5 2.9 3.9 6.1-1.7 4.8-9.2 9.4-9.2 9.4Z" />
+            </svg>
+            <span className="nav-label">Wishlist</span>
             {wishlistReady && slugs.length > 0 && (
               <span className="cart-count" aria-label={`${slugs.length} saved items`}>
                 {slugs.length}
@@ -36,7 +39,7 @@ export default function Header() {
               <path d="M6 7h12l-1 13H7L6 7Z" />
               <path d="M9 7a3 3 0 0 1 6 0" />
             </svg>
-            <span>Cart</span>
+            <span className="nav-label">Cart</span>
             {ready && count > 0 && (
               <span className="cart-count" aria-label={`${count} items in bag`}>
                 {count}

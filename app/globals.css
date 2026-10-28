@@ -754,17 +754,209 @@ select {
 }
 
 @media (max-width: 720px) {
+  .container,
+  .page-shell,
+  .header-inner,
+  .footer-inner,
+  .footer-bottom-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .page-shell {
+    padding-top: 24px;
+    padding-bottom: 48px;
+  }
+
+  .page-heading {
+    margin-bottom: 20px;
+  }
+
+  .page-title,
+  .detail-title {
+    font-size: 24px;
+  }
+
+  .hero {
+    padding: 36px 0 24px;
+  }
+
+  .category-list {
+    margin-bottom: 28px;
+  }
+
+  .home-section {
+    padding-bottom: 40px;
+  }
+
   .detail-layout,
   .cart-layout {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
+  .detail-layout {
+    margin-top: 16px;
+  }
+
+  .product-art-lg .product-emoji {
+    font-size: 96px;
+  }
+
+  .add-button {
+    flex: 1;
+  }
+
+  .related-section {
+    margin-top: 40px;
+  }
+
+  /* 16px inputs stop iOS Safari from zooming in on focus */
+  .catalog-search,
+  .catalog-sort,
+  .promo-input {
+    height: 42px;
+    font-size: 16px;
+  }
+
   .catalog-search {
     width: 100%;
+    margin-right: 0;
+  }
+
+  .catalog-sort {
+    margin-left: auto;
+  }
+
+  .filter-button {
+    height: 40px;
+  }
+
+  .promo-button {
+    min-height: 42px;
+  }
+
+  .cart-quantity {
+    height: 38px;
+  }
+
+  .empty-state {
+    padding: 48px 8px;
   }
 
   .footer-inner {
     flex-direction: column;
+    padding-top: 32px;
+    padding-bottom: 24px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-inner {
+    height: 56px;
+  }
+
+  .header-nav {
+    gap: 2px;
+  }
+
+  .nav-link {
+    min-height: 40px;
+    padding: 8px 10px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Icons + counts only; labels stay available to screen readers */
+  .nav-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .cart-link {
+    gap: 4px;
+  }
+
+  /* Two cards per row instead of one oversized card */
+  .product-grid,
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-info {
+    padding: 10px;
+  }
+
+  .product-meta {
+    font-size: 12px;
+  }
+
+  .product-name {
+    font-size: 14px;
+  }
+
+  .product-tagline {
+    font-size: 12px;
+  }
+
+  .product-emoji {
+    font-size: 44px;
+  }
+
+  .wishlist-button-card {
+    top: calc(100cqw - 40px);
+    right: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .wishlist-button-card svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  /* Cart line: name gets its own row, quantity + total underneath */
+  .cart-line {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    grid-template-areas:
+      "thumb product product"
+      "thumb qty total";
+    column-gap: 12px;
+    row-gap: 8px;
+    align-items: center;
+  }
+
+  .cart-thumb {
+    grid-area: thumb;
+    align-self: start;
+  }
+
+  .cart-product {
+    grid-area: product;
+  }
+
+  .cart-quantity {
+    grid-area: qty;
+    justify-self: start;
+  }
+
+  .cart-line-total {
+    grid-area: total;
+    width: auto;
+  }
+
+  .order-summary {
+    padding: 16px;
   }
 }
